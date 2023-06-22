@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+label {style="font-family:verdana">}
+</style>
+</head>
+<body style=background-color:lightgrey>
+<center>
+<h1 style="font-family:verdana"> Registration form</h1>
+</center>
+<form>
+<label>First name</label>
+<input type="text" name="fname" placeholder="First Name" required><br>
+<label>Second name</label>
+<input type="text" name="sname" placeholder="Second Name" required><br>
+<label>DOB</label>
+<input type="date" name="dob" required>
+<label>Age</label>
+<input type="number" name=age><br>
+<label>Gender</label>
+<input type="radio" name="gender" value="male">
+<label>Male</label>
+<input type="radio" name="gender" value="female">
+<label>Female</label>
+<input type="radio" name="gender" value="other">
+<label>Other</label><br>
+<label>Phone Number:</label>
+<input type="tel" name="phone" placeholder="Enter phone number" required><br>
+<label >Email Address:</label>
+<input type="email"name="email" placeholder="Enter your email address" required><br>
+<label>Address</label>
+<input type="text" name="address" placeholder="Enter your address here" required><br>
+<label>City:</label>
+<select id="city" name="city">
+<option value="thiruvananthapuram">Thiruvananthapuram</option>
+<option value="kochi">Kochi</option>
+<option value="kozhikode">Kozhikode</option>
+<option value="thrissur">Thrissur</option>
+</select>
+<label for="state">State (India):</label>
+<select id="state" name="state">
+<option value="andhra-pradesh">Andhra Pradesh</option>
+<option value="arunachal-pradesh">Arunachal Pradesh</option>
+<option value="assam">Assam</option>
+<option value="bihar">Bihar</option>
+<option value="goa">Goa</option>
+<option value="gujarat">Gujarat</option>
+<option value="haryana">Haryana</option>
+<option value="himachal-pradesh">Himachal Pradesh</option>
+<option value="jammu-kashmir">Jammu and Kashmir</option>
+<option value="jharkhand">Jharkhand</option> 
+<option value="karnataka">Karnataka</option>
+<option value="kerala">Kerala</option>
+</select><br>
+<label>User name</label>
+<input type"text" name=username placeholder="Enter user name"><br>
+<label>Password</label>
+<input type"password" name=password placeholder="Enter your password"><br>
+<label>Confirm password</label>
+<input type"password" name=confirmpassword placeholder="Re-enter your password">
+</body>
+</html>
