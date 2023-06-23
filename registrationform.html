@@ -2,42 +2,44 @@
 <html>
 <head>
 <style>
-label {style="font-family:verdana">}
+    body {text-align: center}
+    h1 {border-radius: 50px;}
+.regform{margin:5%;}
+div {padding-bottom: 20px;}
 </style>
 </head>
-<body style=background-color:lightgrey>
-<center>
+<body style=background-color:rgb(67,88,245)>
 <h1 style="font-family:verdana"> Registration form</h1>
-</center>
 <form>
-<label>First name</label>
-<input type="text" name="fname" placeholder="First Name" required><br>
-<label>Second name</label>
-<input type="text" name="sname" placeholder="Second Name" required><br>
-<label>DOB</label>
-<input type="date" name="dob" required>
-<label>Age</label>
-<input type="number" name=age><br>
-<label>Gender</label>
-<input type="radio" name="gender" value="male">
-<label>Male</label>
-<input type="radio" name="gender" value="female">
-<label>Female</label>
-<input type="radio" name="gender" value="other">
-<label>Other</label><br>
-<label>Phone Number:</label>
-<input type="tel" name="phone" placeholder="Enter phone number" required><br>
-<label >Email Address:</label>
-<input type="email"name="email" placeholder="Enter your email address" required><br>
-<label>Address</label>
-<input type="text" name="address" placeholder="Enter your address here" required><br>
-<label>City:</label>
-<select id="city" name="city">
-<option value="thiruvananthapuram">Thiruvananthapuram</option>
-<option value="kochi">Kochi</option>
+    <div class="regform">
+    <div><label>First name</label>
+    <input type="text" name="fname" placeholder="First name" required></div>
+    <div><label>Second name</label>
+    <input type="text" name="sname" placeholder="Second name" required></div>
+    <div><label>Date of birth</label>
+    <input type="date" name="dob" required>
+    <label>Age</label>
+    <input type="number" name=age><br></div>
+    <div>    <label>Gender</label>
+    <input type="radio" name="gender" value="male">
+    <label>Male</label>
+    <input type="radio" name="gender" value="female">
+    <label>Female</label>
+    <input type="radio" name="gender" value="other">
+    <label>Other</label></div>
+    <div><label>Phone Number:</label>
+    <input type="tel" name="phone" placeholder="Enter phone number" required></div>
+    <div><label >Email Address:</label>
+    <input type="email"name="email" placeholder="Enter your email address" required></div>
+    <div><label>Address</label>
+    <input type="text" name="address" placeholder="Enter your address here" required></div>
+    <div><label>City:</label>
+    <select id="city" name="city">
+    <option value="thiruvananthapuram">Thiruvananthapuram</option>
+    <option value="kochi">Kochi</option>
 <option value="kozhikode">Kozhikode</option>
 <option value="thrissur">Thrissur</option>
-</select>
+</select></div>
 <label for="state">State (India):</label>
 <select id="state" name="state">
 <option value="andhra-pradesh">Andhra Pradesh</option>
@@ -52,12 +54,15 @@ label {style="font-family:verdana">}
 <option value="jharkhand">Jharkhand</option> 
 <option value="karnataka">Karnataka</option>
 <option value="kerala">Kerala</option>
-</select><br>
-<label>User name</label>
-<input type"text" name=username placeholder="Enter user name"><br>
-<label>Password</label>
-<input type"password" name=password placeholder="Enter your password"><br>
-<label>Confirm password</label>
-<input type"password" name=confirmpassword placeholder="Re-enter your password">
+</select>
+<div><label>User name</label>
+<input type="text" name=username placeholder="Enter user name"></div>
+<div><label>Password</label>
+<input type="password" name=password placeholder="Enter your password"></div>
+<div><label>Confirm password</label>
+<input type="password" name=confirmpassword placeholder="Re-enter your password">
+</div>
+</div>
+</form>
 </body>
 </html>

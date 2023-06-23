@@ -2,34 +2,70 @@
 <html>
 <head>
 <style>
-body { background-color:powderblue;}
-h1 {color:red;}
-form {
-  width: 100%;
-  padding: 20px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
+ body 
+  { 
+    background-image: url(https://img.freepik.com/free-photo/blue-sky-clouds-watercolor-texture-background_1409-1216.jpg?w=2000);
+    background-repeat: repeat-y repeat-x ;
+    text-align: center;
+    font-size: larger;
+  }
+  header {font-family: Verdana;
+  font-size: 250%;}
+
+  .input-field {
+    align-items: center;
+    margin-top: 60px ;
+    height: 25px;
+    width: 90%;
+    border: none;
+    border-radius: 150px;
+    font-size: 25px;
+    padding: 0 0 0 50px;
+    outline: none;
+      }
+      .submit{
+        align-items: center;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    height: 30px;
+    outline: none;
+    width: 5%;
+    color: black; }
+    .two-col{ 
+        align-items: center;
+        margin-top: 50px ;
+    }
+
 </style>
 </head>
 <body>
-<center><h1 style="font-family:verdana"y>Login page</h1></center>
-<center>
-<form>
-<label>User name</label>
-<input type="text" name="username" placeholder="User name" required>
-<br>
-<label>Password</label>
-<input type="password" name="password" placeholder="Password" required>
-<br>
-<label>Remember me</label>
-<input type="checkbox" name="rememberMe" name="remember me">
-<a href=/forgotpassword> Forgot password? </a><br>
-<input type="submit" value="Login">
-</form>
-<p>Not a member? <span> <a href=/signup.com> Signup now </span></a>
-</center>
+  <div class="box">
+   <div class="container">
+       <div class="top">
+           <header>Login page</header>
+       </div>
+       <div class="input-field">
+           <input type="text" class="input" placeholder="Username" id="">   
+       </div>
+       <div class="input-field">
+           <input type="Password" class="input" placeholder="Password" id="">     
+       </div>
+       <div class="input-field">
+           <input type="submit" class="submit" value="Login" id="">
+       </div>
+       <div class="two-col">
+           <div class="one">
+              <input type="checkbox" name="" id="check">
+              <label for="check"> Remember Me</label>
+           </div>
+           <div class="two">
+               <label><a href="#">Forgot password?</a></label>
+               <a href="#"> Sign up</a>
+           </div>
+
+       </div>
+   </div>
+</div>  
 </body>
 </html>
