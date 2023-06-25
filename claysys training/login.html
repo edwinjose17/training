@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body {
+        background-image: url(https://img.freepik.com/free-photo/blue-sky-clouds-watercolor-texture-background_1409-1216.jpg?w=2000);
+        background-repeat: repeat-y repeat-x;
+        text-align: center;
+        font-size: larger;
+    }
+
+    header {
+        font-family: Verdana;
+        font-size: 250%;
+    }
+
+    .input {
+        margin-top: 60px;
+        width: 20%;
+        border-radius: 20px;
+        font-size: 25px;
+        padding: 0 0 0 50px;
+    }
+
+    .submit {
+        align-items: center;
+        border-radius: 30px;
+        font-size: 15px;
+        height: 40px;
+        outline: none;
+        width: 15%;
+        color: white;
+        background-color: #4CAF50;
+        border: none;
+        padding: 5px 20px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    .two-col {
+        align-items: center;
+        margin-top: 50px;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+</head>
+<body>
+<div class="box">
+    <div class="container">
+        <div class="top">
+            <header>Login page</header>
+        </div>
+        <div class="input-field">
+            <input type="text" class="input" placeholder="Username" id="username">
+            <span id="usernameError" class="error"></span>
+        </div>
+        <div class="input-field">
+            <input type="password" class="input" placeholder="Password" id="password">
+            <span id="passwordError" class="error"></span>
+        </div>
+        <div class="input-field">
+            <input type="submit" class="submit" value="Login" id="loginButton">
+        </div>
+        <div class="two-col">
+            <div class="one">
+                <input type="checkbox" name="" id="check">
+                <label for="check"> Remember Me</label>
+            </div>
+            <div class="two">
+                <label><a href="#">Forgot password?</a></label>
+                <a href="registrationform.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+</div> 
+<script src="loginjs.js"></script>
+</body>
+</html>

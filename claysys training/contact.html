@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <link rel="stylesheet" href="contactcss.css">
+</head>
+
+<body>
+    <section class="contact-info">
+        <header style="font-size: 50px; text-align: center;" class="heading">Contact us</header>
+        <div class="address">
+            <address>
+                <h3>Our contact info</h3>
+                <p>Redline Pvt Ltd</p>
+                <p>69 Street, Ernakulam, India</p>
+                <p>If you have any questions, email us at: <a href="mailto:redline@gmail.com">redline@gmail.com</a></p>
+                <p>Phone number: 11115555</p>
+            </address>
+            <label for="name">Name</label>
+            <input class="textbox" type="text" id="name" placeholder="Your name">
+            <label for="email">Email</label>
+            <input class="emailbox" type="email" id="email" placeholder="Your email address">
+            <textarea class="textarea" style="height: 200px;" placeholder="Write here"></textarea>
+            <input class="subbutton" type="submit" value="Submit">
+        </div>
+    </section>
+    <script>
+      document.querySelector('.subbutton').addEventListener('click', function () {
+          var nameInput = document.getElementById('name');
+          var emailInput = document.getElementById('email');
+
+          if (nameInput.value.trim() === '') {
+              alert('Please enter your name.');
+              return;
+          }
+
+          if (emailInput.value.trim() === '') {
+              alert('Please enter your email address.');
+              return;
+          }
+
+          alert('Form submitted successfully!');
+      });
+  </script>
+</body>
+
+</html>
