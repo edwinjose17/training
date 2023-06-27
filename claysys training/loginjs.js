@@ -14,8 +14,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Validation passed
     alert("Welcome, " + username + "! You are now logged in.");
-
-    // You can perform further actions, such as submitting the form or redirecting to another page.
     window.location.href = "finalpage.html";
   });
 });

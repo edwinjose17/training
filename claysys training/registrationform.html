@@ -1,16 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<style>
-    body {text-align: center}
-    h1 {border-radius: 50px;}
-    .regform{margin:5%;}
-    div {padding-bottom: 20px;}
-</style>
+    <link rel="stylesheet" href="reg.css">
+    <style>
+        .error-message {
+            color: red;
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+    <script src="cities.js"></script>
+</head>
+<body 
+style="background-image: url(https://img.freepik.com/free-photo/blue-sky-clouds-watercolor-texture-background_1409-1216.jpg?w=2000);">
+<header>
+    <h1 style="font-family:verdana"> Registration form</h1>
+</header>
+<form id="registrationForm">
+    <div class="regform">
+        <div>
+            <label>First name</label>
+            <input type="text" name="fname" placeholder="First name" required>
+            <div id="fnameError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Second name</label>
+            <input type="text" name="sname" placeholder="Second name" required>
+            <div id="snameError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Date of birth</label>
+            <input type="date" name="dob" id="demo" required>
+            <div id="dobError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Age</label>
+            <input type="number" name="age">
+            <div id="ageError" class="error-message"></div>
+        </div>
+        <div class="gender-label">
+            <label>Gender</label>
+            <label>Male</label>
+            <input type="radio" name="gender" value="male">
+            <label>Female</label>
+            <input type="radio" name="gender" value="female">
+            <label>Other</label>
+            <input type="radio" name="gender" value="other">
+            <div id="genderError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Phone number:</label>
+            <input type="tel" name="phone" placeholder="Enter phone number" required>
+            <div id="phoneError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Email address:</label>
+            <input type="email" name="email" placeholder="Enter your email address" required>
+            <div id="emailError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Address</label>
+            <input type="text" name="address" placeholder="Enter your address here" required>
+            <div id="addressError" class="error-message"></div>
+        </div>
+        <div>
+            <label>State:</label>
+            <select onchange="print_city('state', this.selectedIndex);" id="sts" name="stt" class="form-control" required></select>
+            <select id="state" class="form-control" required></select>
+            <div id="stateError" class="error-message"></div>
+            <script language="javascript">print_state("sts");</script>
+        </div>
+        <div style="margin: 10px;">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter username">
+            <div id="usernameError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password">
+            <div id="passwordError" class="error-message"></div>
+        </div>
+        <div>
+            <label>Confirm password</label>
+            <input type="password" name="confirmpassword" placeholder="Re-enter your password">
+            <div id="confirmpasswordError" class="error-message"></div>
+        </div>
+        <button style="background-color: green; border-radius: 25px;height: 40px;width: 100px;" onclick="return validateForm()">Register</button>
+    </div>
+</form>
 <script>
     function validateForm() {
-        // debugger
-        // Get the form inputs
         var firstName = document.forms["registrationForm"]["fname"].value;
         var secondName = document.forms["registrationForm"]["sname"].value;
         var dob = document.forms["registrationForm"]["dob"].value;
@@ -19,141 +98,116 @@
         var phone = document.forms["registrationForm"]["phone"].value;
         var email = document.forms["registrationForm"]["email"].value;
         var address = document.forms["registrationForm"]["address"].value;
-        var city = document.forms["registrationForm"]["city"].value;
         var state = document.forms["registrationForm"]["state"].value;
         var username = document.forms["registrationForm"]["username"].value;
         var password = document.forms["registrationForm"]["password"].value;
         var confirmPassword = document.forms["registrationForm"]["confirmpassword"].value;
+        
+        var isValid = true; // Flag to track form validity
+
+        // Clear previous error messages
+        clearErrorMessages();
 
         // Validate required fields
-        if (firstName == "") {
-            alert("First name must be filled out");
-            return false;
+        if (firstName === "") {
+            displayErrorMessage("fnameError", "First name must be filled out");
+            isValid = false;
         }
-        if (secondName == "") {
-            alert("Second name must be filled out");
-            return false;
+        if (secondName === "") {
+            displayErrorMessage("snameError", "Second name must be filled out");
+            isValid = false;
         }
-        if (dob == "") {
-            alert("Date of birth must be filled out");
-            return false;
+        if (dob === "") {
+            displayErrorMessage("dobError", "Date of birth must be filled out");
+            isValid = false;
+        } else {
+            // Calculate age based on selected date of birth
+            var today = new Date();
+            var birthDate = new Date(dob);
+            var ageInMilliseconds = today - birthDate;
+            var millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;
+            var calculatedAge = Math.floor(ageInMilliseconds / millisecondsPerYear);
+            document.forms["registrationForm"]["age"].value = calculatedAge;
+            age = calculatedAge;
         }
-        if (age == "") {
-            alert("Age must be filled out");
-            return false;
+
+        if (age === "") {
+            displayErrorMessage("ageError", "Age must be filled out");
+            isValid = false;
         }
-        if (gender == "") {
-            alert("Gender must be selected");
-            return false;
+        if (gender === "") {
+            displayErrorMessage("genderError", "Gender must be selected");
+            isValid = false;
         }
-        if (phone == "") {
-            alert("Phone number must be filled out");
-            return false;
+        if (phone === "") {
+            displayErrorMessage("phoneError", "Phone number must be filled out");
+            isValid = false;
         }
-        if (email == "") {
-            alert("Email address must be filled out");
-            return false;
+        if (email === "") {
+            displayErrorMessage("emailError", "Email address must be filled out");
+            isValid = false;
         }
-        if (address == "") {
-            alert("Address must be filled out");
-            return false;
+        if (address === "") {
+            displayErrorMessage("addressError", "Address must be filled out");
+            isValid = false;
         }
-        if (city == "") {
-            alert("City must be selected");
-            return false;
+        if (state === "") {
+            displayErrorMessage("stateError", "State must be selected");
+            isValid = false;
         }
-        if (state == "") {
-            alert("State must be selected");
-            return false;
+        if (username === "") {
+            displayErrorMessage("usernameError", "Username must be filled out");
+            isValid = false;
         }
-        if (username == "") {
-            alert("Username must be filled out");
-            return false;
+        if (password === "") {
+            displayErrorMessage("passwordError", "Password must be filled out");
+            isValid = false;
         }
-        if (password == "") {
-            alert("Password must be filled out");
-            return false;
+        if (confirmPassword === "") {
+            displayErrorMessage("confirmpasswordError", "Confirm password must be filled out");
+            isValid = false;
         }
-        if (confirmPassword == "") {
-            alert("Confirm password must be filled out");
-            return false;
+        if (password !== confirmPassword) {
+            displayErrorMessage("passwordError", "Passwords do not match");
+            isValid = false;
         }
-        if (password != confirmPassword) {
-            alert("Passwords do not match");
-            return false;
+
+        if (isValid) {
+            alert("Registration Successful");
         }
-        else
-        {
-            alert("Registration Succesfull")
+
+        return isValid;
+    }
+
+    function displayErrorMessage(elementId, message) {
+        var errorElement = document.getElementById(elementId);
+        errorElement.innerText = message;
+    }
+
+    function clearErrorMessages() {
+        var errorElements = document.getElementsByClassName("error-message");
+        for (var i = 0; i < errorElements.length; i++) {
+            errorElements[i].innerText = "";
         }
     }
-    var state_arr = new Array("Andaman & Nicobar");
 
-var s_a = new Array();
-s_a[0]="";
-s_a[1]=" Alipur | Andaman Island | Anderson Island | Arainj-Laka-Punga | Austinabad | Bamboo Flat | Barren Island ";
-
-function print_state(state_id){
-	// given the id of the <select> tag as function argument, it inserts <option> tags
-	var option_str = document.getElementById(state_id);
-	option_str.length=0;
-	option_str.options[0] = new Option('Select State','');
-	option_str.selectedIndex = 0;
-	for (var i=0; i<state_arr.length; i++) {
-		option_str.options[option_str.length] = new Option(state_arr[i],state_arr[i]);
-	}
-}
-
-function print_city(city_id, city_index){
-	var option_str = document.getElementById(city_id);
-	option_str.length=0;	// Fixed by Julian Woods
-	option_str.options[0] = new Option('Select City','');
-	option_str.selectedIndex = 0;
-	var city_arr = s_a[city_index].split("|");
-	for (var i=0; i<city_arr.length; i++) {
-		option_str.options[option_str.length] = new Option(city_arr[i],city_arr[i]);
-	}
-}
-
+    var todayDate = new Date();
+    var month = todayDate.getMonth() + 1; 
+    var year = todayDate.getUTCFullYear(); 
+    var tdate = todayDate.getDate();
+    if (month < 10) {
+        month = "0" + month;
+    }
+    if (tdate < 10) {
+        tdate = "0" + tdate;
+    }
+    var maxDate = year + "-" + month + "-" + tdate;
+    document.getElementById("demo").setAttribute("max", maxDate);
+    console.log(maxDate);
 </script>
-</head>
-<body style="background-image: url(https://img.freepik.com/free-photo/blue-sky-clouds-watercolor-texture-background_1409-1216.jpg?w=2000);"></body>
-<h1 style="font-family:verdana"> Registration form</h1>
-<form name="registrationForm" onsubmit="return validateForm()">
-    <div class="regform">
-    <div><label>First name</label>
-    <input type="text" name="fname" placeholder="First name" required></div>
-    <div><label>Second name</label>
-    <input type="text" name="sname" placeholder="Second name" required></div>
-    <div><label>Date of birth</label>
-    <input type="date" name="dob" required>
-    <label>Age</label>
-    <input type="number" name="age"><br></div>
-    <div>    <label>Gender</label>
-    <input type="radio" name="gender" value="male">
-    <label>Male</label>
-    <input type="radio" name="gender" value="female">
-    <label>Female</label>
-    <input type="radio" name="gender" value="other">
-    <label>Other</label></div>
-    <div><label>Phone number:</label>
-    <input type="tel" name="phone" placeholder="Enter phone number" required></div>
-    <div><label >Email address:</label>
-    <input type="email"name="email" placeholder="Enter your email address" required></div>
-    <div><label>Address</label>
-    <input type="text" name="address" placeholder="Enter your address here" required></div>
-    <div><label>City:</label>
-        <select onchange="print_city('state', this.selectedIndex);" id="sts" name ="stt" class="form-control" required></select>
-        <select id ="state" class="form-control" required></select>
-        <script language="javascript">print_state("sts");</script>
-    <div style="margin: 10px;"><label>Username</label>
-    <input type="text" name="username" placeholder="Enter username"></div>
-    <div><label>Password</label>
-    <input type="password" name="password" placeholder="Enter your password"></div>
-    <div><label>Confirm password</label>
-    <input type="password" name="confirmpassword" placeholder="Re-enter your password">
-    </div>
-    <button style="background-color: green; border-radius: 25px;height: 40px;width: 100px;" onclick="return validateForm()">Register</button>
-</form>
+<footer>
+    <p>&copy; 2023 Redline. All rights reserved.</p>
+    <p><a href="contact.html" us>Contact us</a></p>
+</footer>
 </body>
 </html>

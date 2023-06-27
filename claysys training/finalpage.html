@@ -1,82 +1,112 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html>
-    <head>  
-        <style>
-            .site-image{
-  width: 100%;
-  height: 300px;
-  overflow: hidden;
-}
-.social-links {
+<head>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <style>
+    .social-links {
       margin-top: 20px;
+    }
+    .topbox
+    {
+      background-color: rgb(6, 213, 213);
+    }
+    header
+    {
+     margin-top: 20px;
+     padding-left: 30px;
+     padding-top: 20px;
     }
     .social-links a {
       display: inline-block;
       margin-right: 10px;
       color: #fff;
-      font-size: 20px;}
-a {color: ghostwhite;}
-.heading{font-size: 25px;}
-.aboutname{padding: 0 0 0 40%;}
-.signinname{padding: 0 0 0 20px;}
-.loginname{padding: 0 0 0 20px;}
-.contactname{padding: 0 0 0 500px;}
-.footer-part {padding: 0 0 0 75px;
-margin: 0 0 0 75px;}
-.navbartop {border-style: solid;height: 70px;}
-body{background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqzJZqxq2Ujo0UU5spBc_tE4KeA3FvOa8oQ&usqp=CAU);}
-        </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js">
-        </script>
-    </head>
-    <body> 
-        <section class="navbartop">
+      font-size: 20px;
+    }
+    a
+     {
+      color: black;
+    }
+    .footer-part
+     {
+      padding: 0 0 0 75px;
+      margin: 0 0 0 75px;
+      font-size: 20px;
+    }
+    .navbar
+    {
+      margin-left: 1100px;
+      font-size: 25px;
+    }
+  
+    body {
+      background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqzJZqxq2Ujo0UU5spBc_tE4KeA3FvOa8oQ&usqp=CAU);
+    }
+    .swiper-container
+    {
+      padding-left: 25%;
+    }
+  </style>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</head>
+<body>
+  <div class="topbox">
     <header class="heading">
-        <a href="#" class="logo"> Logo</a>
-        <nav class="navbar">
+      <img src="logo.png" width="100px" height="70px" alt="logo">
+    </header>
+    <nav class="navbar">
         <a class="aboutname" href="aboutus.html">About us</a>
         <a class="signinname" href="registrationform.html">Signup</a>
         <a class="loginname" href="login.html">Login</a>
         <a class="contactname" href="contact.html">Contact us</a>
-        </nav> 
-    </header> 
-        </section> >
-        <div style="margin: 50px;" class="Site-img">
-            <div class="swiper-container">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <img src="https://images.unsplash.com/photo-1462206092226-f46025ffe607?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDV8fGJ1c2luZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="First image" width="400" height="200">
-                </div>
-                <div class="swiper-slide">
-                  <img src="https://images.unsplash.com/photo-1611095790444-1dfa35e37b52?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGJ1c2luZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Second image" width="400" height="200">
-                </div>
-              <div class="swiper-wrapper"> </div>
-              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHxidXNpbmVzc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60" alt="Fifth image" width="400" height="200">
-              </div>
-              <div class="swiper-wrapper"> </div>
-              <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGJ1c2luZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Fourth image" width="400" height="200">
-              <div class="swiper-wrapper"> </div>
-              <img src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fGJ1c2luZXNzfGVufDB8fDB8fHww&auto=format&fit=crop&w=600&q=60" alt="Third image" width="400" height="200">
-              <div class="swiper-button-next"></div>
-              <div class="swiper-button-prev"></div>
-            </div>
-          </div>
-          
-        <section class="footer-part">
-            <footer>
-                    <p>&copy; 2023 Redline . All rights reserved.</p>
-                    <nav>
-                    <a  href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    </nav>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/homr" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.twitter.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com/home" target="_blank"><i class="fab fa-instagram"></i></a>
-                      </div>
-            </footer>
-        </section>
-    </body>
+      </nav>
+  </div>
+  <div style="margin: 50px;" class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="img1.avif" alt="First image">
+      </div>
+      <div class="swiper-slide">
+        <img src="img2.avif" alt="Second image" >
+      </div>
+      <div class="swiper-slide">
+        <img src="img3.avif" alt="Third image" >
+      </div>
+      <div class="swiper-slide">
+        <img src="img4.avif" alt="Fourth image" height="500px" >
+      </div>
+      <div class="swiper-slide">
+        <img src="img5.avif" alt="Fifth image" height="500px" >
+      </div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 
+  <section class="footer-part">
+    <footer>
+      <p>&copy; 2023 Redline. All rights reserved.</p>
+      <nav>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+      </nav>
+      <div class="social-links">
+        <a href="https://www.facebook.com/homr" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.twitter.com/home" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/home" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </footer>
+  </section>
+
+  <script>
+    var swiper = new Swiper('.swiper-container',{
+      slidesPerView: 1,
+      spaceBetween: 10,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    }
+    );
+  </script>
+</body>
 </html>

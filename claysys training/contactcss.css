@@ -9,15 +9,12 @@ body {
     font-family: 'Lucida Sans';
 }
 
-.textarea {
-    width: 75%;
-    padding: 12px;
-    border-radius: 4px;
-    margin-top: 20px;
-    margin-bottom: 16px;
-    resize: vertical;
+.textarea 
+{
+    width: 500px;
+    height: 150px;
+    
 }
-
 .subbutton {
     background-color: #04AA6D;
     color: white;
@@ -32,4 +29,8 @@ body {
 .textbox,
 .emailbox {
     height: 20px;
+}
+footer
+{
+    font-size: 20px;
 }
